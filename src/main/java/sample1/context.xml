@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+
+	<context:component-scan base-package="sample1"/>
+	
+	<!-- AOP 설정 -->
+	<!-- 
+		<aop:aspectj-autoproxy/>는
+		AutoProxyCreator Bean을 등록시킨다.
+		AutoProxyCreator는 spring container에 등록된 Bean들 중에서
+		@Aspect가 annotated된 Bean을 찾고,
+		AOP 어노테이션 설정정보를 참고해서 대상 객체를 선정한 다음
+		대상객체와 공통기능이 구현된 객체를 위빙(weaving)해서 대상객체를 대신하는 Proxy객체를 생성한다.
+	 -->
+	<aop:aspectj-autoproxy/>
+</beans>
